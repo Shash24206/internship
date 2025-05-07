@@ -1,0 +1,203 @@
+import React from "react";
+import { FaPhone, FaEnvelope } from "react-icons/fa";
+
+const officeData = [
+  {
+    title: "INDIA CORPORATE OFFICE",
+    address: [
+      "ASHUTOSH MARINE PRIVATE LIMITED",
+      "0091-22-2288 5426 , 2288 5427",
+      "0091-22-2283749",
+      "manning@ashutoshmarine.com",
+      "ashu@ashutoshmarine.com",
+      "111, Sai Chamber, 4th Floor, Opp. Railway Station, Santacruz (E), Mumbai - 400 055, India",
+      "Plot No .39/4022, Opp. Sri Krishna Lodge, Ravipuram Road, Kochi - 682 016, Kerala"
+    ]
+  }
+];
+
+const arabianOffices = [
+  {
+    country: "Qatar",
+    phones: ["+974 44513940 / 44513941", "+974 44513942"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address: "PO Box No. 30817, Doha, Qatar."
+  },
+  {
+    country: "Kuwait",
+    phones: ["+965 25456786", "+965 25456785"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address: "P.O. Box 47958, Al Fahaheel : 64030, Kuwait."
+  },
+  {
+    country: "United Arab Emirates (Sharjah)",
+    phones: ["+971 6 5260711 / 5260712", "+971 6 5260713"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address: "PO Box 42205, Hamriyah Free Zone, Sharjah, UAE."
+  },
+  {
+    country: "United Arab Emirates (Dubai)",
+    phones: ["+971 4 3362664 / 3362667", "+971 4 3360340"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address: "PO Box 48759, Dubai, UAE."
+  },
+  {
+    country: "United Arab Emirates (Dubai 2)",
+    phones: ["+971 4 3362664 / 3362667", "+971 4 3360340"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address: "PO Box 117274, Dubai UAE."
+  },
+  {
+    country: "Saudi Arabia (Jeddah)",
+    phones: ["+966 12 6174989", "+966 12 6712332"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address:
+      "Al-Makarounah RD-64, Wadi Wejj Street, Behind ANB Bank, Azizyah Area, Jeddah - 21382, KSA."
+  },
+  {
+    country: "Saudi Arabia (Dammam)",
+    phones: ["+966 13 8283601"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address: "PO Box 4799, Dammam 31412,KSA."
+  },
+  {
+    country: "Saudi Arabia (Riyadh)",
+    phones: ["+966 11 4092697/8", "+966 11 4092699"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address:
+      "Office No. 40713, Khaldia Tower, 7th Floor, AL-Khazzan, St-Imam-Faisal-Bin-Turki, Riyadh, K.S.A."
+  }
+];
+
+const asiaOffices = [
+  {
+    country: "Nepal",
+    phones: ["+977 1 4650470 / 4650471", "+977 1 4650473"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address:
+      "P.O BOx: 25911,Narayangopal Chowk, Maharajganj Chakrapath, Salaghari, Kathmandu, Nepal."
+  },
+  {
+    country: "Nepal (2)",
+    phones: ["+977 1 4650407 / 4018208 / 4018209", "+977 1 4650410"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address:
+      "P.O BOx: 25911,Narayangopal Chowk, Maharajganj Chakrapath, Salaghari, Kathmandu, Nepal."
+  },
+  {
+    country: "Bangladesh",
+    phones: ["008802-9897946/9897841"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address:
+      "House No. 62, Road No. 3, Block B, Niketan, Gulshan -1, Dhaka - 1212, Bangladesh."
+  },
+  {
+    country: "Philippines",
+    phones: ["+632 4774406", "+63 2 5352906"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address:
+      "Bulalakaw Street, Plainview subdivison, Mandaluyong City, Metro Manila,Philippines"
+  },
+  {
+    country: "Sri Lanka",
+    phones: ["+94 112470813/814/815", "+94 115377978", "+94 115377976"],
+    emails: ["ashutosh@ashutoshmarine.com"],
+    address:
+      "415 1/1, 1/2 Prince of Wales Avenue, Colombo - 14, Sri Lanka."
+  }
+];
+
+const OfficeBox = ({ country, phones, emails, address }) => (
+  <div className="bg-white bg-opacity-90 rounded-xl p-4 shadow-lg backdrop-blur-md border border-red-200">
+    <h3 className="text-lg font-semibold text-blue-900 mb-2">{country}</h3>
+    <div className="space-y-1 text-sm text-gray-800">
+      {phones.map((phone, idx) => (
+        <div key={idx} className="flex items-center gap-2">
+          <FaPhone className="text-red-500" />
+          <a href={`tel:${phone}`} className="hover:underline">
+            {phone}
+          </a>
+        </div>
+      ))}
+      {emails.map((email, idx) => (
+        <div key={idx} className="flex items-center gap-2">
+          <FaEnvelope className="text-red-500" />
+          <a href={`mailto:${email}`} className="hover:underline">
+            {email}
+          </a>
+        </div>
+      ))}
+      <p>{address}</p>
+    </div>
+  </div>
+);
+
+const Contact = () => {
+  return (
+    <div className="w-full bg-gradient-to-br from-red-50 to-white">
+      {/* Banner */}
+      <section className="relative">
+        <img
+          src="/assets/contact/banner.jpg"
+          alt="Contact Banner"
+          className="w-full h-[300px] object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <h1 className="text-white text-4xl font-bold">CONTACT US</h1>
+        </div>
+      </section>
+
+      {/* India Office */}
+      <section className="max-w-6xl mx-auto px-4 py-10">
+        <h2 className="text-2xl font-bold text-blue-900 mb-6">INDIA CORPORATE OFFICE</h2>
+        <div className="bg-white rounded-xl p-6 shadow-md space-y-3 text-gray-800 text-sm">
+          {officeData[0].address.map((line, idx) => {
+            if (line.includes("@")) {
+              return (
+                <div key={idx} className="flex items-center gap-2">
+                  <FaEnvelope className="text-red-500" />
+                  <a href={`mailto:${line}`} className="hover:underline">
+                    {line}
+                  </a>
+                </div>
+              );
+            } else if (/\\d/.test(line)) {
+              return (
+                <div key={idx} className="flex items-center gap-2">
+                  <FaPhone className="text-red-500" />
+                  <a href={`tel:${line}`} className="hover:underline">
+                    {line}
+                  </a>
+                </div>
+              );
+            } else {
+              return <p key={idx}>{line}</p>;
+            }
+          })}
+        </div>
+      </section>
+
+      {/* Arabian Gulf Offices */}
+      <section className="max-w-6xl mx-auto px-4 py-10">
+        <h2 className="text-2xl font-bold text-blue-900 mb-6">OUR PRESENCE IN ARABIAN GULF COUNTRIES</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {arabianOffices.map((office, idx) => (
+            <OfficeBox key={idx} {...office} />
+          ))}
+        </div>
+      </section>
+
+      {/* Asia-Pacific Offices */}
+      <section className="max-w-6xl mx-auto px-4 py-10">
+        <h2 className="text-2xl font-bold text-blue-900 mb-6">OUR PRESENCE IN ASIA-PACIFIC COUNTRIES</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {asiaOffices.map((office, idx) => (
+            <OfficeBox key={idx} {...office} />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Contact;
