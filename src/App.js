@@ -4,8 +4,7 @@ import AboutUs from './pages/aboutus';
 import QualityPolicy from "./pages/qualitypolicy";
 import Contact from './pages/contactus';
 import CodeOfEthics from './pages/codeofethics';
-import Footer from './components/footer';
-import JobOpeningsPage from './pages/careers';
+import CareerPage from './pages/careers';
 import CrewManning from './pages/crewmanning';
 import CrewManagement from './pages/crewmanagement';
 import TechnicalManagement from './pages/technicalmanagment';
@@ -21,6 +20,10 @@ function App() {
     <>
       <Navbar />
       <AboutUs />
+      <QualityPolicy />
+      <CodeOfEthics />
+      <CareerPage />
+      <Contact />
       <CrewManning />
       <CrewManagement />
       <TechnicalManagement />
